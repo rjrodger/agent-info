@@ -44,7 +44,7 @@ tests of what changed.
 
 ## Writing documentation
 
-[`STYLE-GUIDE.md`](STYLE-GUIDE.md) is normative for every published
+[`STYLE-GUIDE.md`](https://github.com/rjrodger/agent-info/blob/main/STYLE-GUIDE.md) is normative for every published
 page. Read it before editing a page.
 
 - The style guide names the gates that hold a page to it, and a change
@@ -53,12 +53,6 @@ page. Read it before editing a page.
   review, and no file under `sketch/` or `admin/`.
 
 ## Code comments
-
-A comment is the one claim in a repository that nothing runs. Its
-author checks it once; from then on it drifts as the code under it
-changes, and nothing reports the drift. A comment that describes what
-the code used to do reads exactly like one that is still true. So
-comments are few and short, and what they say can be checked.
 
 - **A comment is for code that is hard to follow, or whose correct form
   is surprising**, where a reader's first instinct would be to simplify
@@ -87,13 +81,6 @@ comments are few and short, and what they say can be checked.
   `git blame` read them back.
 - **A coverage exclusion's justification is a comment like any other**:
   still required, and held to these rules.
-
-Deletion is the default. A comment that fails a rule is removed, not
-reworded, and prose worth keeping moves to a document in the same
-commit. A file that needs a lot of explanation is reporting a defect in
-its structure or its names, and that is the finding. "Add a comment
-explaining this" is a request to rename something or to write a
-document.
 
 ### The comment gate
 
