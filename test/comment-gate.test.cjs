@@ -110,6 +110,19 @@ describe('comment-gate', () => {
   })
 
 
+  test('lexer-continuation', () => {
+    const lines = ['let s = "one \\', '  two"',
+      ...Array.from({ length: 6 }, (_, i) => `// ${'abcdef'[i]}`), 'let t = 1']
+    for (const eol of ['\n', '\r\n']) {
+      const text = lines.join(eol)
+      Assert.deepEqual(gate.lex(text, 'c').comments.map((c) => c.start), [3, 4, 5, 6, 7, 8],
+        JSON.stringify(eol))
+      Assert.deepEqual(gate.checkText('probe.cjs', text).findings.map((f) => [f.rule, f.line]),
+        [['long-block', 3]], JSON.stringify(eol))
+    }
+  })
+
+
   test('exempt', () => {
     const source = [
       '/* Copyright (c) 2026 Richard Rodger, MIT License */',
