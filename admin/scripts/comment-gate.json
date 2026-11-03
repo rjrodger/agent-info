@@ -1,0 +1,11 @@
+{
+  "source": {
+    ".cjs": "js",
+    ".js": "js",
+    ".mjs": "js"
+  },
+  "skip": [
+    "node_modules",
+    ".git"
+  ]
+}
