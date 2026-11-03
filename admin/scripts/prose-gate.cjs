@@ -96,10 +96,12 @@ function lf(text) {
 }
 
 
-const FENCE_OPEN = /^(\s{0,3})(`{3,}|~{3,})[ \t]*([^`\s]*)[^`]*$/
+// A fence inside a list item is indented as deep as the item's text,
+// so the indent is not bounded.
+const FENCE_OPEN = /^(\s*)(`{3,}|~{3,})[ \t]*([^`\s]*)[^`]*$/
 
 function fenceCloser(fence) {
-  return new RegExp(`^\\s{0,3}${fence[0]}{${fence.length},}\\s*$`)
+  return new RegExp(`^\\s*${fence[0]}{${fence.length},}\\s*$`)
 }
 
 
@@ -366,17 +368,35 @@ function slug(heading) {
 }
 
 
+const SETEXT = /^ {0,3}(?:=+|-+)[ \t]*$/
+
+const inParagraph = (line) => '' !== line.trim()
+  && !OPENS.test(line) && !PIPED.test(line) && !SETEXT.test(line)
+
+
+// A Setext heading is the paragraph above its underline, however many
+// lines that paragraph wraps to.
 function anchors(md) {
   const seen = new Map()
   const out = new Set()
-  for (const line of fenceless(md).split('\n')) {
-    const m = line.match(/^#{1,6}\s+(.*?)(?:\s+#+)?\s*$/)
-    if (null == m) continue
-    const base = slug(m[1])
+  const add = (heading) => {
+    const base = slug(heading)
     const n = seen.get(base) || 0
     seen.set(base, n + 1)
     out.add(0 === n ? base : `${base}-${n}`)
   }
+  const lines = fenceless(md).replace(/^---\n[\s\S]*?\n---\n/, blank).split('\n')
+  lines.forEach((line, i) => {
+    const atx = line.match(/^#{1,6}\s+(.*?)(?:\s+#+)?\s*$/)
+    if (atx) {
+      add(atx[1])
+      return
+    }
+    if (!SETEXT.test(line)) return
+    let start = i
+    while (0 < start && inParagraph(lines[start - 1])) start--
+    if (start < i) add(lines.slice(start, i).map((l) => l.trim()).join(' '))
+  })
   for (const m of md.matchAll(/<a\s[^>]*\b(?:id|name)="([^"]+)"/g)) out.add(m[1])
   return out
 }
@@ -384,6 +404,10 @@ function anchors(md) {
 
 const LINK = /\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g
 const SCHEME = /^[a-z][a-z0-9+.-]*:/i
+
+// A reference definition, `[name]: destination`. A footnote, `[^1]:`,
+// is text, not a destination.
+const DEFINITION = /^ {0,3}\[(?!\^)[^\]]+\]:\s*<?([^\s>]+)>?/
 
 function decode(text) {
   try {
@@ -410,8 +434,10 @@ function checkLinks(file, text) {
   const abs = Path.join(REPO, file)
   const md = fenceless(text).replace(CODE_SPAN, '')
   md.split('\n').forEach((line, i) => {
-    for (const m of line.matchAll(LINK)) {
-      const href = m[1]
+    const definition = line.match(DEFINITION)
+    const hrefs = [...line.matchAll(LINK)].map((m) => m[1])
+    if (definition) hrefs.push(definition[1])
+    for (const href of hrefs) {
       if (SCHEME.test(href) || href.startsWith('//')) continue
       const hash = href.indexOf('#')
       const rel = decode(-1 === hash ? href : href.slice(0, hash))

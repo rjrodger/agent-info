@@ -155,6 +155,14 @@ describe('vale-counts', () => {
   })
 
 
+  test('a-double-quoted-pin-is-read', (t) => {
+    const root = fixture(t, { workflow: 'env:\n  VALE_VERSION: "3.12.0"\n' })
+    const out = run(root, AS_RECORDED)
+    Assert.equal(out.status, 1, out.stdout + out.stderr)
+    Assert.match(out.stderr, /Vale 3\.14\.0 is measuring what CI pins to 3\.12\.0/)
+  })
+
+
   test('a-pin-in-a-release-url-is-read', (t) => {
     const root = fixture(t, {
       workflow: 'run: curl -sSfL https://github.com/errata-ai/vale/releases/download/v3.12.0/vale.tar.gz\n',

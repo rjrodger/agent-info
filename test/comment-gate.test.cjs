@@ -80,6 +80,14 @@ describe('comment-gate', () => {
     Assert.deepEqual(comments.map((c) => [c.kind, c.start, c.end]),
       [['line', 1, 1], ['block', 3, 4]])
     Assert.equal(codeLines, 2)
+
+    const keyword = gate.lex('function f(s) { return /[/*]/.test(s) }\nconst x = 1\n', 'js')
+    Assert.deepEqual(keyword.comments, [], 'a regular expression after return')
+    Assert.equal(keyword.codeLines, 2)
+
+    const property = gate.lex('const half = obj.return / 2 // note\n', 'js')
+    Assert.deepEqual(property.comments.map((c) => c.start), [1],
+      'a property named return is followed by a division')
   })
 
 

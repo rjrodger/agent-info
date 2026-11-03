@@ -141,6 +141,31 @@ describe('prose-gate', () => {
   })
 
 
+  test('reference-links-and-setext-anchors-are-checked', (t) => {
+    const root = fixture(t, {
+      'admin/scripts/prose-gate.json': JSON.stringify({ pages: [], links: ['**/*.md'] }),
+      [VOCABULARY]: 'robust\n',
+      'docs/a.md': [
+        '[the missing page][missing], [the options][opts] and a note.[^1]',
+        '',
+        '[missing]: missing-page.md',
+        '[opts]: b.md#options',
+        '[^1]: A footnote is text, not a destination.',
+        '',
+      ].join('\n'),
+      'docs/b.md': 'Options for\nthe command\n-------\n\n[back](b.md#options-for-the-command)\n',
+      'docs/c.md': '[gone](b.md#options)\n',
+    })
+    const out = run(root)
+    Assert.equal(out.status, 1, out.stdout + out.stderr)
+    Assert.deepEqual(out.findings.sort(), [
+      'docs/a.md:3 dead-link missing-page.md: no such file',
+      'docs/a.md:4 dead-link b.md#options: no such heading',
+      'docs/c.md:1 dead-link b.md#options: no such heading',
+    ])
+  })
+
+
   test('a-bare-hash-in-the-banned-list-is-refused', (t) => {
     const root = fixture(t, {
       'admin/scripts/prose-gate.json': CONFIG,
@@ -209,6 +234,9 @@ describe('prose-gate', () => {
       'a wrapped span holding a shorter run is still a span')
     claim(7 === gate.prose('---\na: 1\n---\nx\n<!-- a\nb -->\ny').split('\n').length,
       'frontmatter and comments keep their lines')
+    claim(!/We|robust|!/.test(gate.prose(
+      '- Example:\n\n    ```js\n    const text = "We are robust!"\n    ```\n')),
+      'a fence indented inside a list item is still a fence')
 
     const joins = (md, phrase) =>
       gate.logical(md).some((para) => para.text.includes(phrase))
@@ -257,6 +285,9 @@ describe('prose-gate', () => {
     const repeats = gate.anchors('# Notes\n## Notes\n```\n# Notes\n```\n')
     claim(repeats.has('notes') && repeats.has('notes-1') && !repeats.has('notes-2'),
       'a repeated heading counts its repeats, and a fence holds none')
+    const setext = [...gate.anchors('---\ntitle: x\n---\nTitle\n=====\n\nSee\nalso\n---\n---\n')]
+    claim('title,see-also' === setext.join(','),
+      'a Setext heading is an anchor, and frontmatter and a second rule are not')
 
     Assert.deepEqual(faults, [],
       `these rules no longer catch what they claim:\n${faults.join('\n')}`)

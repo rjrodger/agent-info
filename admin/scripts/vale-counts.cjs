@@ -45,7 +45,7 @@ function pinned() {
   for (const name of Fs.readdirSync(WORKFLOWS).sort()) {
     if (!/\.ya?ml$/.test(name)) continue
     const text = Fs.readFileSync(Path.join(WORKFLOWS, name), 'utf8')
-    const found = /VALE_VERSION:\s*'?([0-9][^'\s]*)'?/.exec(text) ||
+    const found = /VALE_VERSION:\s*['"]?([0-9][^'"\s]*)['"]?/.exec(text) ||
       /vale\/releases\/download\/v([0-9][^/\s]*)\//.exec(text)
     if (found) return found[1]
   }
