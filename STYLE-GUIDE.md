@@ -532,10 +532,9 @@ argument.
 
 ## Updating this guide
 
-This guide is the same in every project that uses it. It is kept in
-[agent-info](https://github.com/rjrodger/agent-info), where a rule
-changes with its reasoning in the commit message, and a project takes
-the change by copying the file again, never by editing its copy.
+Change it the way behaviour changes: in the same commit as the first
+page that follows the new rule, with the reasoning in the commit
+message.
 
 To ban a phrase, add the regular expression to
 `.vale/styles/config/vocabularies/House/reject.txt` and summarise it in

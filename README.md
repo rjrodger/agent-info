@@ -1,17 +1,13 @@
 # agent-info
 
-Standard guide files and scripts for a repository that people and
+Template guide files and scripts for a repository that people and
 coding agents work in. Each file sits at the path it takes in a
-project, so adopting one is a copy, and taking an update is the same
-copy again.
+project: a project copies the files it needs and changes them to fit.
 
 The scripts need Node.js 18 or later and nothing else: there is no
 package to install.
 
-## Kept identical in every project
-
-A project never edits these. A change is made here, and reaches a
-project when it copies the file again.
+## Guides and scripts
 
 | File | What it is |
 |---|---|
@@ -29,10 +25,10 @@ project when it copies the file again.
 The last two sit under `.vale/styles/`, at the paths this repository
 gives them.
 
-## Copied once, then the project's own
+## Configuration
 
-Each of these starts a project's own file, and the project edits it
-from then on.
+Each of these holds settings that differ from project to project, so a
+project sets its own values in its copy.
 
 | File | What the project sets |
 |---|---|
@@ -50,7 +46,8 @@ decision record `ADR.md`, the prompt log `sketch/PROMPT-LOG.md`, and
 
 ## Adopting
 
-1. Copy both sets of files into the project, at the same paths.
+1. Copy the files into the project, at the same paths, and adapt them
+   to it.
 2. Set the project's languages in `comment-gate.json` and its pages in
    `prose-gate.json`. `DEV-PROCESS.md` describes the first file's keys,
    and `STYLE-GUIDE.md` the second's.
@@ -73,9 +70,9 @@ decision record `ADR.md`, the prompt log `sketch/PROMPT-LOG.md`, and
 6. Create `sketch/PROMPT-LOG.md` under a `# Prompt log` heading, and
    append the first prompt to it before the work starts.
 
-To take an update, copy the first set again. The second set changes by
-hand, so a script that gains a configuration key here gives it a
-default, and an older file keeps working.
+To take an update, merge the changes a project wants into its copies.
+A script that gains a configuration key here gives it a default, so an
+older configuration file keeps working.
 
 ## Working on this repository
 
