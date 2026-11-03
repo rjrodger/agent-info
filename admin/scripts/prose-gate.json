@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "README.md"
+  ],
+  "tutorials": [],
+  "contributor": [
+    "README.md"
+  ],
+  "links": [
+    "README.md",
+    "STYLE-GUIDE.md",
+    "admin/**/*.md"
+  ],
+  "skip": [
+    "node_modules",
+    ".git",
+    "sketch"
+  ],
+  "names": [],
+  "internal": []
+}
