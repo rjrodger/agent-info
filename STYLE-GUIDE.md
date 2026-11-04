@@ -391,6 +391,7 @@ as Vale rather than deferring to it.
 - Restating the question before answering it.
 - A closing one-liner that restates the thesis.
 - Stacked short declaratives (four or more in a row).
+- A second claim carried by a phrase in a sentence about something else.
 - Superlative self-ranking ("the most important thing", "the part that
   matters most").
 - A list of `**Bold term**: explanation` pairs, which is the single most
@@ -432,11 +433,34 @@ State the input, the check, the result, and any limit on that result.
   or irrelevant.
 - Use the present tense: the command "writes", not "will write".
 - Write instructions in the imperative: "Run", "Open", "Set".
-- Put one idea in each sentence, and keep sentences short enough to
-  read once.
-- Keep paragraphs short and on one subject.
-- Put the key point first in the page, the paragraph, the sentence and
-  the heading. Move edge cases later, or behind a link.
+- Make one claim per sentence, and keep sentences short enough to read
+  once.
+- A phrase that brings in a new fact, such as `into one tree` or
+  `in under a second`, is a second claim, however short. So is a
+  relative clause, an appositive or a parenthesis that adds a fact. Give
+  it its own sentence.
+- To find a hidden claim, delete each phrase in turn. If what is lost is
+  a new fact rather than part of the claim's explanation, it needs its
+  own sentence.
+- Give a list a sentence of its own.
+- Lengthen a sentence only by explaining its claim, with a reason, an
+  example or a consequence. Mend a run of short sentences the same way,
+  never by merging claims.
+- Allow a little redundancy, which aids comprehension. Repeat a key noun
+  rather than use a distant pronoun or a synonym, and restate a key fact
+  in a section a reader may reach directly. A closing recap of the whole
+  page is still filler.
+- Keep paragraphs short, each on one subject stated in its first
+  sentence.
+- Put the key point first in the page, the paragraph and the heading.
+  Move edge cases later, or behind a link.
+- End a sentence on the words that matter most to its claim. Never
+  append a second claim to take that place.
+- Keep related words together: a subject near its verb, and a modifier
+  next to the word it modifies.
+- Avoid a run of sentences that each join two clauses with `and`, `but`
+  or `which`.
+- Keep a summary in one tense.
 - Say what to do rather than what to avoid.
 - Follow "this" with a noun, and give "it" one clear antecedent.
 - Keep list items and headings grammatically parallel.
@@ -488,6 +512,11 @@ State the input, the check, the result, and any limit on that result.
 - Hyphenate a compound modifier before its noun (`a well-known tool`)
   but not after it, and never after an adverb ending in `-ly`.
 - Prefer two sentences to a semicolon.
+- Never join two independent clauses with a comma alone. Use a full
+  stop, or a conjunction after the comma.
+- Make an opening phrase refer to the subject that follows it:
+  `After you install the package, the server restarts`, not
+  `After installing the package, the server restarts`.
 - Give each kind of element one format, and keep it everywhere.
 - Keep emphasis rare: no capitals or underlining, and bold only for
   interface labels and the opening sentence of a rule.
