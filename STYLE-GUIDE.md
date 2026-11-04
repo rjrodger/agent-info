@@ -391,6 +391,7 @@ as Vale rather than deferring to it.
 - Restating the question before answering it.
 - A closing one-liner that restates the thesis.
 - Stacked short declaratives (four or more in a row).
+- A second claim carried by a phrase in a sentence about something else.
 - Superlative self-ranking ("the most important thing", "the part that
   matters most").
 - A list of `**Bold term**: explanation` pairs, which is the single most
@@ -432,16 +433,29 @@ State the input, the check, the result, and any limit on that result.
   or irrelevant.
 - Use the present tense: the command "writes", not "will write".
 - Write instructions in the imperative: "Run", "Open", "Set".
-- Put one idea in each sentence, and keep sentences short enough to
-  read once.
-- Cut words, not ideas. Give each point its own sentence, rather than
-  packing several into one with parentheses, semicolons or stacked
-  clauses.
+- Make one claim per sentence, and keep sentences short enough to read
+  once.
+- A phrase that brings in a new fact, such as `into one tree` or
+  `in under a second`, is a second claim, however short. So is a
+  relative clause, an appositive or a parenthesis that adds a fact. Give
+  it its own sentence.
+- To find a hidden claim, delete each phrase in turn. If what is lost is
+  a new fact rather than part of the claim's explanation, it needs its
+  own sentence.
+- Give a list a sentence of its own.
+- Lengthen a sentence only by explaining its claim, with a reason, an
+  example or a consequence. Mend a run of short sentences the same way,
+  never by merging claims.
+- Allow a little redundancy, which aids comprehension. Repeat a key noun
+  rather than use a distant pronoun or a synonym, and restate a key fact
+  in a section a reader may reach directly. A closing recap of the whole
+  page is still filler.
 - Keep paragraphs short, each on one subject stated in its first
   sentence.
 - Put the key point first in the page, the paragraph and the heading.
   Move edge cases later, or behind a link.
-- End a sentence on the words that matter most.
+- End a sentence on the words that matter most to its claim. Never
+  append a second claim to take that place.
 - Keep related words together: a subject near its verb, and a modifier
   next to the word it modifies.
 - Avoid a run of sentences that each join two clauses with `and`, `but`
