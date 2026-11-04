@@ -434,9 +434,19 @@ State the input, the check, the result, and any limit on that result.
 - Write instructions in the imperative: "Run", "Open", "Set".
 - Put one idea in each sentence, and keep sentences short enough to
   read once.
-- Keep paragraphs short and on one subject.
-- Put the key point first in the page, the paragraph, the sentence and
-  the heading. Move edge cases later, or behind a link.
+- Cut words, not ideas. Give each point its own sentence, rather than
+  packing several into one with parentheses, semicolons or stacked
+  clauses.
+- Keep paragraphs short, each on one subject stated in its first
+  sentence.
+- Put the key point first in the page, the paragraph and the heading.
+  Move edge cases later, or behind a link.
+- End a sentence on the words that matter most.
+- Keep related words together: a subject near its verb, and a modifier
+  next to the word it modifies.
+- Avoid a run of sentences that each join two clauses with `and`, `but`
+  or `which`.
+- Keep a summary in one tense.
 - Say what to do rather than what to avoid.
 - Follow "this" with a noun, and give "it" one clear antecedent.
 - Keep list items and headings grammatically parallel.
@@ -488,6 +498,11 @@ State the input, the check, the result, and any limit on that result.
 - Hyphenate a compound modifier before its noun (`a well-known tool`)
   but not after it, and never after an adverb ending in `-ly`.
 - Prefer two sentences to a semicolon.
+- Never join two independent clauses with a comma alone. Use a full
+  stop, or a conjunction after the comma.
+- Make an opening phrase refer to the subject that follows it:
+  `After you install the package, the server restarts`, not
+  `After installing the package, the server restarts`.
 - Give each kind of element one format, and keep it everywhere.
 - Keep emphasis rare: no capitals or underlining, and bold only for
   interface labels and the opening sentence of a rule.
