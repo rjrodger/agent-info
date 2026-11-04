@@ -278,6 +278,8 @@ describe('prose-gate', () => {
       'a climbed path that ends in admin/')
     claim(cites('[the process](../DEV-PROCESS.md#testing)'), 'a link to the process')
     claim(!cites('the tool writes AGENTS.md'), 'the bare name is product surface')
+    claim(cites('a Diátaxis tutorial'), 'the documentation framework by name')
+    claim(cites('the DIATAXIS split'), 'the framework without its accent, in capitals')
 
     claim('the-structure-diátaxis-enforced-by-placement' ===
       gate.slug('The structure: Diátaxis, enforced by placement'), 'a letter outside ASCII')
