@@ -26,10 +26,13 @@ reason:
    quotes, and the parenthesis ration.
 2. The [Google developer documentation style
    guide](https://developers.google.com/style) for everything this file
-   does not cover: second person, present tense, active voice,
-   sentence-style capitalisation in headings, serial commas, one idea
-   per sentence.
+   does not cover.
 3. [Vale](https://vale.sh) defaults, which mostly means spelling.
+
+Where ten published guides agree, Google's among them, this file states
+the rule itself, in [Writing rules the published guides
+share](#writing-rules-the-published-guides-share), so Google settles
+only what that section and the rest of this file leave open.
 
 ## How this guide is enforced
 
@@ -425,6 +428,332 @@ State the input, the check, the result, and any limit on that result.
   `Google.Spelling` is switched off in `.vale.ini` for it. Actual
   misspellings are still caught: `Vale.Spelling` runs at error against
   `accept.txt`, the terms the project accepts by name.
+
+## Writing rules the published guides share
+
+These rules come from reading ten published style guides side by side
+in November 2026: [Google's](https://developers.google.com/style),
+[Apple's](https://support.apple.com/guide/applestyleguide/welcome/web),
+[Microsoft's](https://learn.microsoft.com/en-us/style-guide/welcome/),
+[IBM's](https://www.ibm.com/design/language/),
+[DigitalOcean's](https://www.digitalocean.com/community/tutorials/digitalocean-s-technical-writing-guidelines),
+[Mailchimp's](https://styleguide.mailchimp.com/),
+[Atlassian's](https://atlassian.design/foundations/content),
+[Shopify's Polaris](https://github.com/Shopify/polaris/blob/main/polaris.shopify.com/content/content/index.mdx),
+[Salesforce's](https://developer.salesforce.com/docs/atlas.en-us.salesforce_pubs_style_guide.meta/salesforce_pubs_style_guide/overview.htm)
+and [SUSE's](https://documentation.suse.com/style/current/single-html/style-guide-db/).
+Their advice was sorted into 160 techniques, and each technique was
+counted by how many of the ten guides state it.
+
+This guide adopts every rule below. The rules fall into five groups
+that run from the sentence to the channel, and inside a group they are
+ordered by how widely they are held: by all ten guides, by most (eight
+or nine), by many (five to seven) or by a few (two to four). The guides
+agree most about sentences and least about channels, and the lists thin
+out in the same direction.
+
+A rule that all ten give is settled practice, and a page breaks it only
+for a reason it can state. Where the house voice departs from the
+field, the house wins, and the table at the end of this section lists
+each departure, so that none of them reads as an oversight.
+
+### Language
+
+Every guide gives these:
+
+- **Say exactly what happens.** Name the command, the file, the number
+  and its unit, and cut vague words and empty intensifiers such as
+  `very`, `really` and `quite`.
+- **Use the plain word, or define the term of art at its first use.**
+  A term the project owns links to its definition, as
+  [Terminology](#terminology) says.
+- **Spell every product, feature and project name as its owner does**,
+  every time, and never shorten it.
+- **Give each kind of element one format, and keep it everywhere.**
+  This guide uses code font for what a reader types or a program
+  prints, bold for an interface label, and plain text for the rest.
+- **Capitalise proper nouns and the names products give themselves,
+  and nothing else.**
+
+Every guide also takes a position on the first person and on dashes.
+This guide's positions are in [The voice](#the-voice) and in the
+punctuation rulings.
+
+Most guides give these:
+
+- **Use the active voice.** Name who or what acts, and keep the passive
+  for an actor that is unknown or beside the point.
+- **Prefer the short, common word.** `use`, not `utilise`; `start`, not
+  `commence`; `help`, not `facilitate`.
+- **Cut words that carry nothing.** `in order to` is `to`, and
+  `at this point in time` is `now`.
+- **Use one term for one thing throughout.** A term varied for elegance
+  makes the reader wonder whether it names a second thing.
+- **Put the key information first.** In a page that is the opening
+  sentence, in a sentence the main clause, and in a heading the first
+  words.
+- **Keep paragraphs short**, a few sentences on one subject.
+- **Keep the items of a list, and the headings of a page, grammatically
+  parallel.**
+- **Spell out an abbreviation at its first use on a page**, with the
+  short form after it in parentheses, unless the short form is the
+  better known, as `API` and `URL` are.
+- **Write numbers by one rule.** The guides agree that a page needs one
+  and differ on which. This guide's: words for zero to nine in running
+  prose and numerals from 10, numerals always for a measurement, a
+  version, a size or anything the reader types, and no sentence that
+  opens with a numeral.
+- **Write a date that no reader can misread.** Spell out the month and
+  give the full year: `4 November 2026` in prose, ISO 8601
+  (`2026-11-04`) where a program reads it, and never `11/04/2026`.
+- **Use the serial comma**, as seven of the eight guides that rule on it
+  do: `red, green, and blue`.
+- **Hyphenate a compound modifier before its noun but not after it**,
+  `a well-known tool` but `the tool is well known`, and never after an
+  adverb ending in `-ly`.
+- **Write `and` in prose, not `&` or `+`.** Keep the symbol where a name
+  or a label has it.
+- **Write `for example`, `that is` and `and so on`, not `e.g.`, `i.e.`
+  and `etc.`** Every guide that rules on Latin abbreviations says to
+  avoid them.
+- **Write `and` or `or` rather than a slash**, and never `and/or`.
+- **Prefer two sentences to a semicolon.**
+- **Keep emphasis rare.** No capitals or underlining for it, and bold
+  only for an interface label or for the sentence that leads a rule, as
+  in this guide.
+- **Common contractions are welcome.** `it's`, `don't` and `you're` read
+  the way speech does; an unusual one such as `would've` does not.
+
+Many guides give these:
+
+- **Never call a task easy, simple or quick**, and drop `just`,
+  `simply`, `obviously` and `of course`. A reader who finds the task
+  hard hears that they are slow.
+- **Describe behaviour in the present tense.** The command writes the
+  file, rather than `will write` it.
+- **Write an instruction in the imperative.** `Run`, `Open`, `Set`.
+- **Keep sentences short enough to read once.** A sentence that needs a
+  second reading is two sentences. The rhythm in
+  [The voice](#the-voice) still allows one long explanatory sentence
+  before its short verdict.
+- **Say what to do rather than what to avoid**, where both would say
+  the same thing.
+- **Never blame the reader.** Say what happened and how to put it
+  right.
+- **Claim only what the page can show.** No superlatives and no
+  promises: the banned list catches the worst of the vocabulary.
+- **Use `must` for a requirement, `can` for an ability, and `may` only
+  for permission.** `should` marks a recommendation the reader may
+  skip, so it needs its reason.
+- **Write a compound as two words when it is a verb and as one when it
+  is a noun.** `set up` the server and check the `setup`; `log in` with
+  a `login`; `back up` to make a `backup`.
+- **Never use a trademark as a verb, a plural or a possessive.**
+- **Put a space between a number and its unit**, `10 GB`, a
+  non-breaking one where the format allows, and none before `%`.
+- **Leave `please` and `thank you` out of instructions.** Keep `please`
+  for a request that puts the reader out.
+
+A few guides give these:
+
+- **One idea to a sentence.**
+- **Follow `this` with a noun, and give `it` one obvious antecedent.**
+- **Let the verb carry the action.** `decide`, not `make a decision`;
+  the banned nominalisation pattern enforces part of this.
+- **Software does not want, think or know.** Say what it does.
+- **Hedge only where the uncertainty is real**, and say what it is.
+
+### Readers
+
+Every guide gives these:
+
+- **Write for a reader you can name.** Know what they already know and
+  what they came to do; the four page kinds encode both.
+- **Write for a reader whose first language is not English, and for
+  the translation tool between you.** Plain words, literal phrasing and
+  whole sentences survive translation.
+
+Most guides give these:
+
+- **Organise a page around what the reader wants to do**, not around
+  how the product is built.
+- **Write for scanning.** Headings say what follows, paragraphs stay
+  short, and parallel items go in a list.
+- **Write inclusively.** Use the singular `they` for a person whose
+  pronouns are unknown, gender-neutral words (`staff hours`, not
+  `man-hours`), and no assumption about who the reader is.
+- **Leave out idioms, slang and cultural references**, such as sport,
+  holidays and television. They fail in translation and shut readers
+  out, and the banned list catches the worst of the metaphors.
+- **Give every image alt text that says what it shows**, as
+  [Figures are generated](#figures-are-generated) requires.
+
+Many guides give these:
+
+- **Put what the reader needs first**, and move edge cases and detail
+  later or behind a link.
+- **Give the reason for a step when it changes what the reader does.**
+- **Write about people in the terms they use for themselves**, and
+  mention age, disability, gender or ethnicity only where it matters.
+- **Use no disability as a figure of speech.** Not `crazy`, `lame` or
+  `blind to`.
+- **Replace exclusionary technical terms.** Write `allowlist`,
+  `denylist`, `primary`, `replica` and `main`; where code fixes a legacy
+  term, show it in the code and use the alternative in prose.
+- **Never let colour, shape or position alone identify something.**
+  Name it.
+- **Never let `above` or `below` be the only clue to where something
+  is.** Name it or link it. The words stay off the banned list, because
+  a long reference page uses them as ordinary cross-references.
+- **Give every table a header row, and keep tables simple.** No merged
+  cells, and no table used for layout.
+- **Keep the small words that make a sentence unambiguous.**
+  `verify that the file exists`, not `verify the file exists`.
+- **Prefer a one-word verb to a phrasal verb**, `remove` rather than
+  `get rid of`, and give each word one meaning on a page.
+- **Build a program's messages from whole sentences**, never by joining
+  fragments, so that a translation can reorder them.
+
+A few guides give these:
+
+- **When a task has several methods, document one that a keyboard
+  alone can complete.**
+- **Draw examples from more than one culture**, in names, places and
+  currencies.
+- **Prefer a neutral verb to a violent one**, `stop` a process rather
+  than `kill` it, except where the command itself is named.
+- **Caption or transcribe every video and audio recording.**
+
+### Structure
+
+Most guides give these:
+
+- **A heading says what its section answers or does**, with the key
+  word first; a task heading names the task.
+- **Introduce a list with a sentence that ends in a colon.** A list has
+  at least two items, each starting with a capital. Every item ends
+  with a full stop when any of them is a sentence, and with nothing when
+  all are fragments.
+- **Number a list when its order matters, and bullet it when it does
+  not.**
+- **Introduce every procedure** with a heading or a sentence that names
+  its task.
+- **Link a term at its first mention on a page, and not again**, as
+  [Terminology](#terminology) requires.
+- **Prefer descriptive link text to a bare URL.** Where a URL must show,
+  put it in code font.
+- **Give a figure a title or caption that states what it shows**, and
+  label its parts.
+
+Many guides give these:
+
+- **Nest headings in order.** One title, then each level under the one
+  above it, none skipped.
+- **Use a table for items compared on the same attributes.** Introduce
+  it with a sentence, and keep its cells short.
+- **Keep notes and warnings for what the reader must not miss.** Never
+  stack two, and put a warning before the step it concerns.
+- **Title a page with its subject or its task**, in the words a reader
+  would search for.
+- **Number the steps of a procedure.**
+- **Put the goal or the location before the action.** "To build the
+  site, run `make build`", and "In **Settings**, select **Privacy**".
+- **Make link text say where it goes**, never `here` or `click here`.
+- **Phrase a cross-reference one way.** `For more information, see`,
+  with the page title as the link.
+- **Link to the primary source, and say when a link leaves the
+  project's documentation or downloads a file.**
+- **Use a picture only where it shows what prose cannot**, and keep the
+  text complete without it.
+
+The closing rule, to end by handing the reader something, is in
+[The voice](#the-voice), and many guides give it too.
+
+A few guides give these:
+
+- **Put one action in each step.**
+- **State the prerequisites before the first step.**
+- **Mark an optional step with `Optional:` at its start.**
+- **Show what a step produces where the reader can check it**, as a
+  tutorial does for every step.
+- **Crop a screenshot to what matters, and keep personal data out of
+  it.**
+
+### Product and code
+
+No rule here reaches most guides, because only some of the ten describe
+interfaces or code; among those that do, these are common practice.
+
+Many guides give these:
+
+- **Name an interface element exactly as the screen shows it, in
+  bold.**
+- **Use the verb for the reader's input.** `click`, `tap`, `press` or
+  `type`, and `select` for choosing from a set; Microsoft alone prefers
+  one input-neutral verb for every device.
+- **Write a menu path with a spaced `>` between the choices**, as in
+  **File** > **Save**. Atlassian avoids the symbol, because a screen
+  reader says "greater than", and where that matters the steps are
+  written out.
+- **Name keys as they are printed, joined by `+` without spaces**, as
+  in `Ctrl+C`.
+- **An error message says what went wrong and what to do next**, in the
+  reader's terms, without blame and without a guessed cause.
+- **Start a button or command label with a verb that says what it
+  does.**
+- **Put in code font anything a reader types or a program prints.**
+  Commands, options, paths, file names, values and identifiers all take
+  it.
+- **Tag every code block with its language**, which
+  [Code snippets](#code-snippets-every-one-is-tested) needs to test it.
+- **Mark a placeholder one way, and say what replaces it at its first
+  use.** This guide writes `<name>`.
+- **Keep a command apart from its output.** The house transcript marks
+  each command with `$ `.
+- **Use reserved example values.** `example.com`, the documentation
+  address ranges `192.0.2.0/24` and `2001:db8::/32`, and plainly
+  fictional names.
+
+A few guides give these:
+
+- **Never put a real person's data or a working key in an example.**
+- **State the versions a page was written against**, where the result
+  depends on them.
+- **Name an element's type only when its label alone is ambiguous.**
+  "Click **Save**", not "Click the **Save** button".
+
+Where the guides ask for working samples, they ask less than
+[Code snippets](#code-snippets-every-one-is-tested) does: here every
+snippet runs.
+
+### Governance and channels
+
+Most guides name a fallback authority and a review process. This guide
+has both: the priority order at its top, and the gates in
+[How this guide is enforced](#how-this-guide-is-enforced). A few guides
+give these:
+
+- **Never announce what has not shipped**, and state a feature's
+  support status, experimental or deprecated, before describing it.
+- **Cite the source of any claim the page does not establish itself.**
+- **Correct or remove a page the moment it stops being true.**
+
+Release notes, email, marketing and social posts are outside this
+guide. None of the ten gives release notes explicit guidance, and this
+guide keeps a changelog as the project's history rather than its
+documentation.
+
+### Where this guide departs from the field
+
+| Topic | The field | This guide |
+|---|---|---|
+| Spelling | US English, usually with Merriam-Webster | British spellings, with `accept.txt` for the project's terms |
+| Dashes | the closed em dash, in seven of the ten | no em dash in prose |
+| Quotation marks | full stops and commas inside the closing mark | punctuation outside the quotes |
+| First person | `we` for the publisher, in limited cases | `we` only in tutorials, and never `I` |
+| Exclamation marks | avoid, or use sparingly | one per page, in tutorials only |
+| Humour | avoid, or use sparingly | self-directed or about the industry, and never where correctness or safety is at stake |
+| Emoji | no agreement | none |
 
 ## Code snippets: every one is tested
 
