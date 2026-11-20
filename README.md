@@ -68,7 +68,7 @@ decision record `ADR.md`, the prompt log `sketch/PROMPT-LOG.md`, and
 
 5. Point git at the hook with `git config core.hooksPath .githooks`.
 6. Create `sketch/PROMPT-LOG.md` under a `# Prompt log` heading, and
-   append the first prompt to it before the work starts.
+   follow the [prompt logging rules](DEV-PROCESS.md#the-prompt-log).
 
 To take an update, merge the changes a project wants into its copies.
 A script that gains a configuration key here gives it a default, so an
