@@ -11,7 +11,7 @@ package to install.
 
 | File | What it is |
 |---|---|
-| [`DEV-PROCESS.md`](DEV-PROCESS.md) | how work is done: the prompt log, testing, documentation, code comments, and what each folder holds |
+| [`DEV-PROCESS.md`](DEV-PROCESS.md) | how work is done: the prompt log, testing, documentation, code comments, the decision record, and what each folder holds |
 | [`STYLE-GUIDE.md`](STYLE-GUIDE.md) | how documentation is written, and the gates that hold a page to it |
 | [`admin/README.md`](admin/README.md) | what `admin/` holds |
 | [`sketch/README.md`](sketch/README.md) | that every file in `sketch/` is to be ignored |
